@@ -145,7 +145,7 @@ async function getPlanetsData() {
       await getTodayInSpaceData(formatDateForInput(date));
    });
    btnToday.addEventListener('click', async function () {
-      if (isSameDate(input.getAttribute('date-select'), new Date())) return;
+      if (isSameDate(input.getAttribute('date-select'), formatDateForInput(new Date()))) return;
       await getTodayInSpaceData(formatDateForInput(new Date()));
    });
 })();
@@ -793,8 +793,7 @@ function daysUntilLaunch(date) {
 function formatDateForInput(date) {
    var now = new Date();
    date = new Date(date);
-
-   if (isSameDate(date, now) && date.getHours() > 0 && date.getHours() < 8) date.setDate(date.getDate() - 1);
+   if (isSameDate(date, now) && date.getHours() >= 0 && date.getHours() < 8) date.setDate(date.getDate() - 1);
    date = String(date.getFullYear()) + '-' + String(date.getMonth() + 1).padStart(2, '0') + '-' + String(date.getDate()).padStart(2, '0');
    return date;
 }
