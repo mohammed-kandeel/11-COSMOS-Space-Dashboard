@@ -551,7 +551,6 @@ function planetsContainers() {
                               <span class="text-slate-400">Discovered By</span>
                               <span id="planet-discoverer" class="font-semibold text-right">${item.discoveredBy ? item.discoveredBy : 'Known since antiquity'}</span>
                            </div>
-=
                            <div class="flex justify-between items-center py-2 border-b border-slate-700">
                               <span class="text-slate-400">Discovery Date</span>
                               <span id="planet-discovery-date" class="font-semibold">${item.discoveryDate ? item.discoveryDate : 'Ancient times'}</span>
@@ -844,3 +843,4 @@ function setLoadImageForTodayInSpace() {
    todayInSpaceElements().apodFailed.classList.add('hidden');
    todayInSpaceElements().apodVideo.classList.add('hidden');
 }
+
